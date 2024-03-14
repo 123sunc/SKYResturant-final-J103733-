@@ -1,0 +1,68 @@
+﻿@model IEnumerable<SKYResturant.Models.Reservation>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="breadcrumbs pt-5 mt-15">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Reservation</h2>
+            <ol>
+                <li><a>All Reservations</a></li>
+
+            </ol>
+        </div>
+
+    </div>
+</section>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfPeople)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialRequests)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfPeople)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialRequests)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

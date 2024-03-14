@@ -1,0 +1,69 @@
+﻿@model SKYResturant.Models.Reservation
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<section class="breadcrumbs pt-5 mt-15">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Reservation</h2>
+            <ol>
+                <li><a>Table Booking </a></li>
+
+            </ol>
+        </div>
+
+    </div>
+</section>
+<div class="container">
+    <div class="col-md-12">
+        <div class="section-title">
+            <h2>Reservation</h2>
+            <p>Reserve Tables for Friends & Family</p>
+        </div>
+
+        <form asp-action="Create" >
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+                <div class="col-lg-4 col-md-6 form-group">
+                <label asp-for="NumberOfPeople" class="control-label"></label>
+                <input asp-for="NumberOfPeople" class="form-control" />
+                <span asp-validation-for="NumberOfPeople" class="text-danger"></span>
+            </div>
+                <div class="col-lg-4 col-md-6 form-group">
+                <label asp-for="ContactNumber" class="control-label"></label>
+                <input asp-for="ContactNumber" class="form-control" />
+                <span asp-validation-for="ContactNumber" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpecialRequests" class="control-label"></label>
+                <textarea asp-for="SpecialRequests" class="form-control" rows="5" placeholder="Special Requests"></textarea>
+                <span asp-validation-for="SpecialRequests" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Back to Home</a>
+</div>
+

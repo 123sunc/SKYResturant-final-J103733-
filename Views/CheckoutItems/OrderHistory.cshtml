@@ -1,0 +1,54 @@
+﻿@model IEnumerable<SKYResturant.Models.OrderHistory>
+
+<section class="breadcrumbs pt-5 mt-15">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>User</h2>
+            <ol>
+                <li><a href="#">Order History</a></li>
+                
+            </ol>
+        </div>
+
+    </div>
+</section>
+<section id="book-a-table" class="book-a-table">
+    <div class="container" data-aos="fade-up">
+        @if (Model.Any())
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Order No</th>
+                        <th>Email</th>
+                        <th>Order Items</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model)
+                    {
+                        <tr>
+                            <td>@order.OrderNo</td>
+                            <td>@order.Email</td>
+                            <td>
+                                <ul>
+                                    @foreach (var orderItem in order.OrderItems)
+                                    {
+                                        <li>@orderItem.Quantity x @orderItem.FoodItem.Name</li>
+                                    }
+                                </ul>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No order history found.</p>
+        }
+
+    </div>
+</section><!-- End Book A Table Section -->
+

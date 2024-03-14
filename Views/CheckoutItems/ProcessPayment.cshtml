@@ -1,0 +1,35 @@
+﻿@model SKYResturant.Models.PaymentService
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+        <div class="row">
+
+            <h3>Payment</h3>
+
+
+            <form asp-action="ProcessPayment" method="post">
+                <label for="cardholderName">Cardholder Name:</label>
+                <input type="text" id="cardholderName" name="cardholderName" required><br><br>
+
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required><br><br>
+
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YYYY" required><br><br>
+
+                <label for="cvc">CVC:</label>
+                <input type="text" id="cvc" name="cvc" required><br><br>
+
+                <button type="submit" asp-action="Buy">Pay with Stripe</button>
+            </form>
+
+
+
+        </div>
+    </div>
+</section><!-- End Hero -->

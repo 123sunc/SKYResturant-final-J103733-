@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "PaymentSuccessful";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1>Thanks For Purchasing <span>Purchasing</span></h1>
+                <h2>Payment Succesfull!</h2>
+
+                <div class="btns">
+                    @* <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a> *@
+                    <a href="@Url.Action("Index", "Home")#menu" class="btn-book animated fadeInUp scrollto">Place An Order</a>
+                </div>
+            </div>
+          
+
+        </div>
+    </div>
+</section><!-- End Hero -->
+
